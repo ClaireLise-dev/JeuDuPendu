@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+  font-family: "Roboto", "sans serif";
+  background-color: #b9b9d9;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+button {
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  padding: 0;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #b9b9d9;
+  box-shadow: 5px 5px 10px #9d9db8, -5px -5px 10px #cecef3;
+}
+
+.bouton_clavier {
+  width: 50px;
+}
+
+.clavier {
+  margin: 0px auto;
+  text-align: center;
+  width: 800px;
+  margin: 50px auto;
+}
+
+.lettres {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  margin: 15px auto;
+}
+
+aside {
+  width: 48%;
+  padding: 0;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #b9b9d9;
+  box-shadow: 5px 5px 10px #9d9db8, -5px -5px 10px #cecef3;
+}
+
+#principale {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+#boutons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+h1 {
+  font-size: 2em;
+}
