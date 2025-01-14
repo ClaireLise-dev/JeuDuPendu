@@ -85,6 +85,36 @@ button:hover {
     ombreExterieure 200ms 300ms ease-in forwards;
 }
 
+#coups_restants {
+  text-align: center;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  background-color: #e1dee0;
+  box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
+}
+
+#barre_progression {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.barre_progression {
+  width: 400px;
+  height: 20px;
+  border-radius: 30px;
+  box-shadow: inset 5px 5px 10px #cdcacc, inset -5px -5px 10px #f8f7f7;
+}
+
+.progrès {
+  width: 200px;
+  height: 100%;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #fbd1d8, #f2695c);
+}
+
 /* Création de l'animation des boutons, à déclencher avec JS au final? */
 
 @keyframes ombreInterieure {
