@@ -7,7 +7,7 @@
 body {
   margin: auto;
   font-family: "Roboto", "sans serif";
-  background-color: #b9b9d9;
+  background-color: #e1dee0;
   color: #333333;
   display: flex;
   flex-direction: column;
@@ -29,8 +29,8 @@ button {
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  background-color: #b9b9d9;
-  box-shadow: 5px 5px 10px #9d9db8, -5px -5px 10px #cecef3;
+  background-color: #e1dee0;
+  box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
 }
 
 .bouton_clavier {
@@ -57,9 +57,8 @@ aside {
   padding: 0;
   border-radius: 10px;
   border: none;
-  cursor: pointer;
-  background-color: #b9b9d9;
-  box-shadow: 5px 5px 10px #9d9db8, -5px -5px 10px #cecef3;
+  background-color: #e1dee0;
+  box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
 }
 
 #principale {
@@ -71,11 +70,43 @@ aside {
 
 #boutons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 40px;
   flex-grow: 1;
 }
 
 h1 {
   font-size: 2em;
+}
+
+button:hover {
+  animation: ombreInterieure 200ms ease-out forwards,
+    ombreExterieure 200ms 300ms ease-in forwards;
+}
+
+/* Création de l'animation des boutons, à déclencher avec JS au final? */
+
+@keyframes ombreInterieure {
+  0% {
+    box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
+  }
+  50% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: inset 5px 5px 10px #cdcacc, inset -5px -5px 10px #f8f7f7;
+  }
+}
+
+@keyframes ombreExterieur {
+  0% {
+    box-shadow: inset 5px 5px 10px #cdcacc, inset -5px -5px 10px #f8f7f7;
+  }
+  50% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
+  }
 }
