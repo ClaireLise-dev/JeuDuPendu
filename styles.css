@@ -33,18 +33,17 @@ button {
   box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
 }
 
-.bouton_clavier {
+.keyboardButton {
   width: 50px;
 }
 
-.clavier {
-  margin: 0px auto;
+.keyboard {
   text-align: center;
   width: 800px;
-  margin: 50px auto;
+  margin: 20px auto;
 }
 
-.lettres {
+.letters {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -54,6 +53,7 @@ button {
 
 aside {
   width: 48%;
+  height: 300px;
   padding: 0;
   border-radius: 10px;
   border: none;
@@ -61,19 +61,24 @@ aside {
   box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
 }
 
-#principale {
+#mainContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
 }
 
-#boutons {
+#buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
   flex-grow: 1;
+}
+
+.mainButton {
+  font-weight: bold;
+  font-size: 1em;
 }
 
 h1 {
@@ -85,7 +90,7 @@ button:hover {
     ombreExterieure 200ms 300ms ease-in forwards;
 }
 
-#coups_restants {
+#remainingAttempts {
   text-align: center;
   padding: 10px;
   border-radius: 30px;
@@ -94,22 +99,22 @@ button:hover {
   box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
 }
 
-#barre_progression {
+#progressBarContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
 
-.barre_progression {
+.progressBar {
   width: 400px;
   height: 20px;
   border-radius: 30px;
   box-shadow: inset 5px 5px 10px #cdcacc, inset -5px -5px 10px #f8f7f7;
 }
 
-.progrès {
-  width: 200px;
+.progress {
+  width: 50%;
   height: 100%;
   border-radius: 30px;
   background: linear-gradient(180deg, #fbd1d8, #f2695c);
