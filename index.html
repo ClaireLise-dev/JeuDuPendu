@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Jeu du Pendu</title>
   </head>
   <body>
@@ -17,27 +17,28 @@
     <section>
       <div class="container" id="mainContainer">
         <aside>
-          <p>Image du pendu</p>
+          <img src="/img/SVG/Step 10.svg" alt="Image pendu">
         </aside>
         <aside>
-          <p>Mot à deviner</p>
+            <div id="wordSection">
+          <input id="word" placeholder="Mot à deviner"></input>
+          <div id="progressBarContainer">
+            <div class="progressBarText">
+              <span id="remainingAttempts">Essais restants 5</span>
+            </div>
+            <div class="progressBar">
+              <div class="progress"></div>
+            </div>
+          </div>
+        </div>
         </aside>
-      </div>
-    </section>
-    <section>
-      <div class="container" id="progressBarContainer">
-        <div class="progressBarText">
-          <span id="remainingAttempts">Coups restant : 5</span>
-        </div>
-        <div class="progressBar">
-          <div class="progress"></div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="container" id="buttons">
-        <button class="mainButton">Nouveau jeu</button>
-        <button class="mainButton">Mode facile</button>
+        <aside>
+            <div id="buttons">
+                <button class="mainButton">Nouveau jeu</button>
+                <button class="mainButton">Mode facile</button>
+                <button class="mainButton">Thème sombre</button>
+            </div>
+        </aside>
       </div>
     </section>
     <section>
@@ -74,8 +75,7 @@
           <button class="keyboardButton">b</button>
           <button class="keyboardButton">n</button>
         </div>
-        <button class="mainButton">Thème sombre</button>
-      </div>
+        </div>
     </section>
 
     <footer>

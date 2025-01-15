@@ -15,15 +15,14 @@ body {
 
 .container {
   text-align: center;
-  width: 90%;
+  width: 95%;
   max-width: 1000px;
   margin: 20px auto;
 }
 
 button {
-  width: 200px;
-  height: 60px;
-  line-height: 60px;
+  width: 150px;
+  height: 50px;
   text-align: center;
   padding: 0;
   border-radius: 10px;
@@ -52,13 +51,15 @@ button {
 }
 
 aside {
-  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 300px;
   padding: 0;
   border-radius: 10px;
   border: none;
   background-color: #e1dee0;
-  box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
 }
 
 #mainContainer {
@@ -66,10 +67,12 @@ aside {
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
+  gap: 10px;
 }
 
 #buttons {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 40px;
@@ -78,7 +81,6 @@ aside {
 
 .mainButton {
   font-weight: bold;
-  font-size: 1em;
 }
 
 h1 {
@@ -86,8 +88,8 @@ h1 {
 }
 
 button:hover {
-  animation: ombreInterieure 200ms ease-out forwards,
-    ombreExterieure 200ms 300ms ease-in forwards;
+  animation: shadowIn 200ms ease-out forwards,
+    shadowOut 200ms 300ms ease-in forwards;
 }
 
 #remainingAttempts {
@@ -101,14 +103,15 @@ button:hover {
 
 #progressBarContainer {
   display: flex;
+  width: 500px;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .progressBar {
-  width: 400px;
-  height: 20px;
+  width: 300px;
+  height: 15px;
   border-radius: 30px;
   box-shadow: inset 5px 5px 10px #cdcacc, inset -5px -5px 10px #f8f7f7;
 }
@@ -120,9 +123,32 @@ button:hover {
   background: linear-gradient(180deg, #fbd1d8, #f2695c);
 }
 
+#word {
+  text-align: center;
+  height: 50px;
+  width: 400px;
+  border-radius: 30px;
+  border: none;
+  background-color: #e1dee0;
+  box-shadow: inset 5px 5px 10px #cdcacc, inset -5px -5px 10px #f8f7f7;
+}
+
+#wordSection {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  flex-direction: column;
+  gap: 40px;
+}
+
+img {
+  width: 150px;
+  height: 300px;
+}
+
 /* Création de l'animation des boutons, à déclencher avec JS au final? */
 
-@keyframes ombreInterieure {
+@keyframes shadowIn {
   0% {
     box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
   }
@@ -134,7 +160,7 @@ button:hover {
   }
 }
 
-@keyframes ombreExterieur {
+@keyframes shadowOut {
   0% {
     box-shadow: inset 5px 5px 10px #cdcacc, inset -5px -5px 10px #f8f7f7;
   }
