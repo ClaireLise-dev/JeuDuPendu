@@ -4,11 +4,46 @@
   box-sizing: border-box;
 }
 
+:root {
+  --lightBg: #e1dee0;
+  --lightC: #333333;
+  --lightShadowDark: #b4b2b3;
+  --lightShadowLight: #ffffff;
+  --lightBtLGLight: #f1eef0;
+  --lightBtLGDark: #cbc8ca;
+  --lightProgressLight: #fbd1d8;
+  --lightProgressDark: #f2695c;
+
+  --darkBg: #292d32;
+  --darkC: #d4d4d4;
+  --darkShadowDark: #191b1e;
+  --darkShadowLight: #393f46;
+  --darkBtLGLight: #2c3036;
+  --darkBtLGDark: #25292d;
+  --darkProgressLight: #3dcdd8;
+  --darkProgressDark: #156267;
+}
+
+.darkTheme {
+  --lightBg: var(--darkBg);
+  --lightC: var(--darkC);
+  --lightShadowDark: var(--darkShadowDark);
+  --lightShadowLight: var(--darkShadowLight);
+  --lightBtLGLight: var(--darkBtLGLight);
+  --lightBtLGDark: var(--darkBtLGDark);
+  --lightProgressLight: var(--darkProgressLight);
+  --lightProgressDark: var(--darkProgressDark);
+}
+
+.darkTheme img {
+  filter: invert(1);
+}
+
 body {
   margin: auto;
   font-family: "Roboto", "sans serif";
-  background-color: #e1dee0;
-  color: #333333;
+  background-color: var(--lightBg);
+  color: var(--lightC);
   display: flex;
   flex-direction: column;
 }
@@ -28,8 +63,17 @@ button {
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  background-color: #e1dee0;
-  box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
+  background-color: var(--lightBg);
+  background: linear-gradient(
+    145deg,
+    var(--lightBtLGLight),
+    var(--lightBtLGDark)
+  );
+  color: var(--lightC);
+  box-shadow: 5px 5px 10px var(--lightShadowDark),
+    -5px -5px 10px var(--lightShadowLight);
+  transition: box-shadow 0.2s ease, transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .keyboardButton {
@@ -59,7 +103,6 @@ aside {
   padding: 0;
   border-radius: 10px;
   border: none;
-  background-color: #e1dee0;
 }
 
 #mainContainer {
@@ -81,6 +124,8 @@ aside {
 
 .mainButton {
   font-weight: bold;
+  box-shadow: 7px 7px 14px var(--lightShadowDark),
+    -7px -7px 14px var(--lightShadowLight);
 }
 
 h1 {
@@ -88,8 +133,22 @@ h1 {
 }
 
 button:hover {
-  animation: shadowIn 200ms ease-out forwards,
-    shadowOut 200ms 300ms ease-in forwards;
+  background-color: var(--lightShadowLight);
+  background: linear-gradient(
+    145deg,
+    var(--lightBtLGDark)
+    var(--lightBtLGLight),
+    
+  );
+  box-shadow: inset 5px 5px 10px var(--lightShadowDark),
+    inset -5px -5px 10px var(--lightShadowLight);
+  transform: translateY(1px);
+}
+
+button:active {
+  box-shadow: inset 5px 5px 10px var(--lightShadowDark),
+    inset -5px -5px 10px var(--lightShadowLight);
+  transform: translateY(1px);
 }
 
 #remainingAttempts {
@@ -97,8 +156,8 @@ button:hover {
   padding: 10px;
   border-radius: 30px;
   border: none;
-  background-color: #e1dee0;
-  box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
+  box-shadow: 5px 5px 10px var(--lightShadowDark),
+    -5px -5px 10px var(--lightShadowLight);
 }
 
 #progressBarContainer {
@@ -113,14 +172,19 @@ button:hover {
   width: 300px;
   height: 15px;
   border-radius: 30px;
-  box-shadow: inset 5px 5px 10px #cdcacc, inset -5px -5px 10px #f8f7f7;
+  box-shadow: inset 5px 5px 10px var(--lightShadowDark),
+    inset -5px -5px 10px var(--lightShadowLight);
 }
 
 .progress {
   width: 50%;
   height: 100%;
   border-radius: 30px;
-  background: linear-gradient(180deg, #fbd1d8, #f2695c);
+  background: linear-gradient(
+    180deg,
+    var(--lightProgressLight),
+    var(--lightProgressDark)
+  );
 }
 
 #word {
@@ -129,8 +193,9 @@ button:hover {
   width: 400px;
   border-radius: 30px;
   border: none;
-  background-color: #e1dee0;
-  box-shadow: inset 5px 5px 10px #cdcacc, inset -5px -5px 10px #f8f7f7;
+  background-color: var(--lightBg);
+  box-shadow: inset 5px 5px 10px var(--lightShadowDark),
+    inset -5px -5px 10px var(--lightShadowLight);
 }
 
 #wordSection {
@@ -144,30 +209,4 @@ button:hover {
 img {
   width: 150px;
   height: 300px;
-}
-
-/* Création de l'animation des boutons, à déclencher avec JS au final? */
-
-@keyframes shadowIn {
-  0% {
-    box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
-  }
-  50% {
-    box-shadow: none;
-  }
-  100% {
-    box-shadow: inset 5px 5px 10px #cdcacc, inset -5px -5px 10px #f8f7f7;
-  }
-}
-
-@keyframes shadowOut {
-  0% {
-    box-shadow: inset 5px 5px 10px #cdcacc, inset -5px -5px 10px #f8f7f7;
-  }
-  50% {
-    box-shadow: none;
-  }
-  100% {
-    box-shadow: 5px 5px 10px #cdcacc, -5px -5px 10px #f8f7f7;
-  }
 }
