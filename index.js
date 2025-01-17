@@ -1,5 +1,7 @@
 const themeButton = document.querySelector(".mainButton:nth-child(3)");
 const body = document.querySelector("body");
+const url = "https://trouve-mot.fr/api/random";
+const input = document.querySelector("input");
 
 if (localStorage.getItem("theme") === "sombre") {
   darkMode();
@@ -33,3 +35,18 @@ letters.forEach((letter) => {
   button.classList.add("keyboardButton");
   keyboardContainer.appendChild(button);
 });
+
+async function getWord() {
+  const request = await fetch(url, { method: "GET" });
+  if (!request.ok) {
+    alert("Il y a eu un problème");
+  } else {
+    let word = await request.json();
+    const wordLength = word[0].name.length;
+    console.log(wordLength);
+    const dashes = "-".repeat(wordLength).trim();
+    input.value = dashes;
+  }
+}
+
+getWord();

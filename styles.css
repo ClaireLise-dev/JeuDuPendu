@@ -80,6 +80,12 @@ button {
     background-color 0.2s ease;
 }
 
+input {
+  font-size: 1.5em;
+  letter-spacing: 0.5em;
+  text-align: center;
+}
+
 .keyboard {
   display: flex;
   flex-wrap: wrap;
@@ -196,14 +202,14 @@ button:active {
   text-align: center;
   height: 4em;
   width: 100%;
-  border-radius: 30px;
+  border-radius: 50px;
   border: none;
   background-color: var(--lightBg);
   box-shadow: inset 5px 5px 10px var(--lightShadowDark),
     inset -5px -5px 10px var(--lightShadowLight);
 }
 
-#wordSection {
+#wordContainer {
   display: flex;
   align-items: center;
   width: 100%;
