@@ -6,12 +6,15 @@ const keyboardButton = document.querySelectorAll(".keyboardButton");
 const keyboardContainer = document.querySelector(".keyboard");
 const letters = "abcdefghijklmnopqrstuvwxyz".split("");
 const textRemainingAttempts = document.querySelector("#remainingAttempts");
-const progressBar = document.querySelector(".progress")
-let guessWord ;
+const progressBar = document.querySelector(".progress");
+const newGameButton = document.querySelector("#newGame");
+const hangmanImage = document.querySelector("#hangmanImage");
+
+let guessWord;
 let displayArray = [];
 let remainingAttempts = 10;
 progressBar.style.width = "100%";
-textRemainingAttempts.textContent = `Coups ${remainingAttempts}`; 
+textRemainingAttempts.textContent = `Coups ${remainingAttempts}`;
 
 if (localStorage.getItem("theme") === "sombre") {
   darkMode();
@@ -45,20 +48,26 @@ themeButton.addEventListener("click", () => {
   }
 });
 
-function updateProgressBar(){
-  remainingAttempts--
+newGameButton.addEventListener("click", () => {
+  location.reload();
+});
+
+function updateProgressBar() {
+  remainingAttempts--;
   let percentage = parseFloat(progressBar.style.width) - 10;
   progressBar.style.width = percentage + "%";
   textRemainingAttempts.textContent = `Coups ${remainingAttempts}`;
+  updateHangmanImage();
+
   if (remainingAttempts === 0) {
-    progressBar.style.width = "0%"; 
-    textRemainingAttempts.textContent = `Coups 0`; 
+    progressBar.style.width = "0%";
+    textRemainingAttempts.textContent = `Coups 0`;
 
     setTimeout(() => {
-        alert(`Perdu ! Le mot était : ${guessWord}`);
-        location.reload();
-    }, 500); 
-}
+      alert(`Perdu ! Le mot était : ${guessWord}`);
+      location.reload();
+    }, 500);
+  }
 }
 
 function darkMode() {
@@ -69,29 +78,35 @@ function darkMode() {
   localStorage.setItem("theme", "sombre");
 }
 
-
+function updateHangmanImage() {
+  let imageIndex = 10 - remainingAttempts;
+  if (remainingAttempts === 9) {
+    hangmanImage.style.visibility = "visible";
+  }
+  if (imageIndex >= 1 && imageIndex <= 10) {
+    hangmanImage.src = `img/Step ${imageIndex}.png`;
+  }
+}
 
 letters.forEach((letter) => {
   const keyboardButton = document.createElement("button");
   keyboardButton.textContent = letter;
   keyboardButton.classList.add("keyboardButton");
-  keyboardButton.addEventListener ("click", (event) => {
+  keyboardButton.addEventListener("click", (event) => {
     const guessedLetter = event.target.textContent;
-    if (guessWord.includes(guessedLetter)){
+    if (guessWord.includes(guessedLetter)) {
       guessWord.split("").forEach((letter, index) => {
         if (letter === guessedLetter) {
           displayArray[index] = guessedLetter;
         }
       });
-      input.value = displayArray.join(""); 
-    }else{
-     updateProgressBar()
+      input.value = displayArray.join("");
+    } else {
+      updateProgressBar();
     }
-  
 
     event.target.classList.add("clickedLetter");
-    console.log(event.target.classList) 
-  })
+    console.log(event.target.classList);
+  });
   keyboardContainer.appendChild(keyboardButton);
 });
-
