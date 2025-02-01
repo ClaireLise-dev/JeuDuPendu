@@ -162,6 +162,12 @@ button:active {
   transform: translateY(1px);
 }
 
+.clickedLetter {
+  box-shadow: inset 5px 5px 10px var(--lightShadowDark),
+    inset -5px -5px 10px var(--lightShadowLight);
+  transform: translateY(1px);
+}
+
 #remainingAttempts {
   text-align: center;
   padding: 10px;
