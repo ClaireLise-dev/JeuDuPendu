@@ -5,8 +5,13 @@ const input = document.querySelector("input");
 const keyboardButton = document.querySelectorAll(".keyboardButton");
 const keyboardContainer = document.querySelector(".keyboard");
 const letters = "abcdefghijklmnopqrstuvwxyz".split("");
+const textRemainingAttempts = document.querySelector("#remainingAttempts");
+const progressBar = document.querySelector(".progress")
 let guessWord ;
 let displayArray = [];
+let remainingAttempts = 10;
+progressBar.style.width = "100%";
+textRemainingAttempts.textContent = `Coups ${remainingAttempts}`; 
 
 if (localStorage.getItem("theme") === "sombre") {
   darkMode();
@@ -40,6 +45,21 @@ themeButton.addEventListener("click", () => {
   }
 });
 
+function updateProgressBar(){
+  remainingAttempts--
+  let percentage = parseFloat(progressBar.style.width) - 10;
+  progressBar.style.width = percentage + "%";
+  textRemainingAttempts.textContent = `Coups ${remainingAttempts}`;
+  if (remainingAttempts === 0) {
+    progressBar.style.width = "0%"; 
+    textRemainingAttempts.textContent = `Coups 0`; 
+
+    setTimeout(() => {
+        alert(`Perdu ! Le mot était : ${guessWord}`);
+        location.reload();
+    }, 500); 
+}
+}
 
 function darkMode() {
   body.classList.add("transition");
@@ -64,9 +84,14 @@ letters.forEach((letter) => {
         }
       });
       input.value = displayArray.join(""); 
+    }else{
+     updateProgressBar()
     }
+  
+
     event.target.classList.add("clickedLetter");
     console.log(event.target.classList) 
   })
   keyboardContainer.appendChild(keyboardButton);
 });
+
