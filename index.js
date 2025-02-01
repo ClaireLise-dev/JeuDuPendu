@@ -6,7 +6,7 @@ const url = "https://trouve-mot.fr/api/random";
 const input = document.querySelector("input");
 const keyboardButton = document.querySelectorAll(".keyboardButton");
 const keyboardContainer = document.querySelector(".keyboard");
-const letters = "abcdefghijklmnopqrstuvwxyz".split("");
+const letters = "abcdefghijklmnopqrstuvwxyzàâçéèêëîïôûù".split("");
 const textRemainingAttempts = document.querySelector("#remainingAttempts");
 const progressBar = document.querySelector(".progress");
 const newGameButton = document.querySelector("#newGame");
@@ -141,6 +141,12 @@ letters.forEach((letter) => {
         }
       });
       input.value = displayArray.join("");
+      if (!displayArray.includes("-")) {
+        setTimeout(() => {
+          alert("Bravo ! Vous avez trouvé le mot 🎉");
+          location.reload();
+        }, 500);
+      }
     } else {
       updateProgressBar();
     }
