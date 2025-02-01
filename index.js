@@ -6,7 +6,7 @@ const url = "https://trouve-mot.fr/api/random";
 const input = document.querySelector("input");
 const keyboardButton = document.querySelectorAll(".keyboardButton");
 const keyboardContainer = document.querySelector(".keyboard");
-const letters = "abcdefghijklmnopqrstuvwxyzàâçéèêëîïôûù".split("");
+const letters = "abcdefghijklmnopqrstuvwxyzàâçéèêëîïôûùü".split("");
 const textRemainingAttempts = document.querySelector("#remainingAttempts");
 const progressBar = document.querySelector(".progress");
 const newGameButton = document.querySelector("#newGame");
@@ -156,3 +156,7 @@ letters.forEach((letter) => {
   });
   keyboardContainer.appendChild(keyboardButton);
 });
+
+// Mise à jour dynamique de l'année dans le footer
+
+document.querySelector("#year").textContent = new Date().getFullYear();

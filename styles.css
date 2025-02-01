@@ -68,11 +68,9 @@ button {
   border: none;
   cursor: pointer;
   background-color: var(--lightBg);
-  background: linear-gradient(
-    145deg,
-    var(--lightBtLGLight),
-    var(--lightBtLGDark)
-  );
+  background: linear-gradient(145deg,
+      var(--lightBtLGLight),
+      var(--lightBtLGDark));
   color: var(--lightC);
   box-shadow: 5px 5px 10px var(--lightShadowDark),
     -5px -5px 10px var(--lightShadowLight);
@@ -148,10 +146,8 @@ h1 {
 
 button:hover {
   background-color: var(--lightShadowLight);
-  background: linear-gradient(
-    145deg,
-    var(--lightBtLGDark) var(--lightBtLGLight)
-  );
+  background: linear-gradient(145deg,
+      var(--lightBtLGDark) var(--lightBtLGLight));
   box-shadow: inset 5px 5px 10px var(--lightShadowDark),
     inset -5px -5px 10px var(--lightShadowLight);
   transform: translateY(1px);
@@ -198,11 +194,9 @@ button:active {
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  background: linear-gradient(
-    180deg,
-    var(--lightProgressLight),
-    var(--lightProgressDark)
-  );
+  background: linear-gradient(180deg,
+      var(--lightProgressLight),
+      var(--lightProgressDark));
   transition: width 0.5s ease-in-out;
 }
 
@@ -269,15 +263,15 @@ img {
     gap: 20px;
   }
 
-  #mainContainer > aside:nth-child(1),
-  #mainContainer > aside:nth-child(2) {
+  #mainContainer>aside:nth-child(1),
+  #mainContainer>aside:nth-child(2) {
     flex: 1 1 45%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  #mainContainer > aside:nth-child(3) {
+  #mainContainer>aside:nth-child(3) {
     flex: 1 1 100%;
     display: flex;
     justify-content: center;

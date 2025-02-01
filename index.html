@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Jeu du Pendu</title>
-  </head>
-  <body>
-    <section>
-      <header>
-        <div class="container">
-          <h1>Jeu du Pendu</h1>
-        </div>
-      </header>
-    </section>
-    <main>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Jeu du Pendu</title>
+</head>
+
+<body>
+  <section>
+    <header>
+      <div class="container">
+        <h1>Jeu du Pendu</h1>
+      </div>
+    </header>
+  </section>
+  <main>
     <section>
       <div class="container" id="mainContainer">
         <aside>
-          <img src="img/Step 1.png" id="hangmanImage" alt="Image étapes du pendu"  >
+          <img src="img/Step 1.png" id="hangmanImage" alt="Image étapes du pendu">
         </aside>
         <aside>
-            <div id="wordContainer">
-          <input id="word" type="text" placeholder="Mot à deviner" disabled></input>
-          <div id="progressBarContainer">
-            <div class="progressBarText">
-              <span id="remainingAttempts"></span>
-            </div>
-            <div class="progressBar">
-              <div class="progress"></div>
+          <div id="wordContainer">
+            <input id="word" type="text" placeholder="Mot à deviner" disabled></input>
+            <div id="progressBarContainer">
+              <div class="progressBarText">
+                <span id="remainingAttempts"></span>
+              </div>
+              <div class="progressBar">
+                <div class="progress"></div>
+              </div>
             </div>
           </div>
-        </div>
         </aside>
         <aside>
-            <div id="buttons">
-                <button class="mainButton" id="newGame" aria-label="Nouvelle partie">Nouveau jeu</button>
-                <button class="mainButton" id="proposedWord" aria-label="Proposer mot">Proposer un mot</button>
-                <button class="mainButton" aria-label="Thème">Thème sombre</button>
-            </div>
+          <div id="buttons">
+            <button class="mainButton" id="newGame" aria-label="Nouvelle partie">Nouveau jeu</button>
+            <button class="mainButton" id="proposedWord" aria-label="Proposer mot">Proposer un mot</button>
+            <button class="mainButton" aria-label="Thème">Thème sombre</button>
+          </div>
         </aside>
       </div>
     </section>
     <section>
-      <div class="keyboard">
-
-        </div>
+      <div class="keyboard"></div>
     </section>
-    </main>
+  </main>
 
-    <footer>
-      <div class="container">© Créé par Claire-Lise Démettre - 2025</div>
-    </footer>
-    <script src="index.js"></script>
-  </body>
+  <footer>
+    <div class="container">© Créé par Claire-Lise Démettre - <span id="#footerYear">2025</span></div>
+  </footer>
+  <script src="index.js"></script>
+</body>
+
 </html>
