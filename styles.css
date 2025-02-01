@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+}
+
+
+
 :root {
   --lightBg: #e1dee0;
   --lightC: #333333;
