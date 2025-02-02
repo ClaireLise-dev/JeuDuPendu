@@ -148,6 +148,7 @@ aside {
     -7px -7px 14px var(--lightShadowLight);
 }
 
+
 h1 {
   font-size: 2em;
 }
@@ -161,7 +162,8 @@ button:hover {
   transform: translateY(1px);
 }
 
-button:active {
+.keyboardButton:active,
+.mainButton.pressed {
   box-shadow: inset 5px 5px 10px var(--lightShadowDark),
     inset -5px -5px 10px var(--lightShadowLight);
   transform: translateY(1px);
