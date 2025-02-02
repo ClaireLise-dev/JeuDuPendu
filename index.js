@@ -43,7 +43,6 @@ async function getWord() {
 getWord();
 
 // Fonctions de la page
-
 function updateProgressBar() {
   remainingAttempts--;
   let percentage = parseFloat(progressBar.style.width) - 10;
@@ -116,7 +115,6 @@ function checkFullWord() {
 }
 
 // Gestion des évènements sur les boutons
-
 themeButton.addEventListener("click", toggleTheme);
 themeButton.addEventListener("touchend", (e) => {
   e.preventDefault();
@@ -136,7 +134,7 @@ proposedWordButton.addEventListener("touchend", (e) => {
 });
 
 // Effet de clic pour les boutons principaux
-document.querySelectorAll(".mainButton").forEach((button) => {
+mainButtons.forEach((button) => {
   button.addEventListener("mousedown", () => {
     button.classList.add("pressed");
   });
