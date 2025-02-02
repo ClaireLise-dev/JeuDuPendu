@@ -12,6 +12,7 @@ const progressBar = document.querySelector(".progress");
 const newGameButton = document.querySelector("#newGame");
 const hangmanImage = document.querySelector("#hangmanImage");
 const proposedWordButton = document.querySelector("#proposedWord");
+const mainButtons = document.querySelectorAll(".mainButton");
 
 //Initialisation des variables globales
 
@@ -124,6 +125,12 @@ newGameButton.addEventListener("click", () => {
 
 proposedWordButton.addEventListener("click", () => {
   checkFullWord();
+});
+
+mainButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setTimeout(() => button.blur(), 100);
+  });
 });
 
 // Gestion du clavier virtuel
