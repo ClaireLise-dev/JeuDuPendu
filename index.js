@@ -98,7 +98,7 @@ function checkFullWord() {
 
   proposedWord = proposedWord.trim().toLowerCase();
 
-  if (!/^[a-zA-Z]+$/.test(proposedWord)) {
+  if (!/^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/.test(proposedWord)) {
     alert(
       "Erreur : Veuillez entrer uniquement des lettres (sans chiffres ni symboles)."
     );
