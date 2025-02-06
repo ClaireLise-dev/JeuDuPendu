@@ -39,10 +39,16 @@ Ce projet est une version numérique du célèbre **Jeu du Pendu**. Le but est s
 
 ---
 
-## 🛠️ Installation et exécution
+## 📂 Installation et utilisation
 
-### **1️⃣ Cloner le projet**
+1️⃣ **Cloner le repository**
 
-```sh
-git clone https://github.com/TON_UTILISATEUR/jeu-du-pendu.git
+```bash
+git clone https://github.com/ClaireLise-dev/JeuDuPendu.git
 ```
+
+2️⃣ **Ouvrir `index.html` dans votre navigateur**
+
+## 🌍 Jouer directement en ligne
+
+🔗 **[Jouer au Pendu 🎮](https://clairelise-dev.github.io/JeuDuPendu/)**
